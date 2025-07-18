@@ -2,10 +2,16 @@ Prerequisites:
 - ***FLTK***: previously installed Debug/Release (preferably both) version of library. If you haven't done it yet, check out the installation guide in this repository.
 - ***VS 2022 with C++ workload***: although I assume you already have the correct setup if you're interested in this guide, I still want to make sure you did install all necessary component for proper C++ work in your IDE.
 
+>**Common pitfalls**:
+>This is again related to the Debug/Release versions mismatch.
+>Possible scenarios:
+>- You mix Debug directories/libs with Release directories in Properties configuration - the result is likely invalid project config/.props file.
+>- You are trying to use Debug build of application with Release build of the FLTK library or otherwise - the result is commonly a bunch of errors related to `_ITERATOR_DEBUG_LEVEL` and classified as Linker errors.
+
 ---
 
 There are only 2 ways of configuring your project for the FLTK use that I'm aware of:
-1. **Configure a single project in Options menu**
+1. **Configure a single project in Properties menu**
 2. **Make Property Sheets for future use in other projects**
 
 The second way contains all steps of the first one + additional ones so I will concentrate rather on one. I'll tell you what to change if you only want one project to be configured.
@@ -48,7 +54,7 @@ The common structure that does not yet have the necessary settings is
 ---
 
 ## Step 2: Add Property Sheet
-If you never dealt with Property Sheet, you might think: "But I just added this sheet to my project, why would I do it again".  The problem is your Property Sheet is not visible to your project and the setting won't be applied.
+If you never dealt with Property Sheet before, you might think: "But I just added this sheet to my project, why would I do it again".  The problem is your Property Sheet is not visible to your project and the setting won't be applied.
 To active your .props file you need the Property Manager menu, which is commonly not found easily but you have me and this guide, so shouldn't be much trouble for you to do this:
 
 **Go to "View" → "Other Windows" → "Property Manager"** 
