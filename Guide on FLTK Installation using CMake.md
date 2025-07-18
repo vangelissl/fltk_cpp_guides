@@ -6,6 +6,9 @@ Prerequisites:
 
 If you don't trust this guide or something here didn't work for you, or you are using different OS/generator/IDE, I strongly recommend checking the official [guide](https://github.com/fltk/fltk/blob/master/README.CMake.txt) in git repository which is less verbose and detailed but 100% truthworthy.
 
+>**Common Pitfalls**:
+The problem is related to Debug/Release versions mismatch. It is better to specify the type of generator/build/installation explicitly in commands so you don't have to guess which one is used by default. The rule of thumb is - "Use the same version parameter for all commands".
+
 ---
 ## Step 1: Clone or Download FLTK
 I recommend cloning a GitHub repo, otherwise you have to deal with **tar.zp** extension.
@@ -21,8 +24,8 @@ Firstly, you need to navigate to FLTK root directory which is probably **whateve
 `cmake -B build`
 
 I believe the default settings are used if not specified otherwise but in my case I was using `"Visual Studio 17 2022"` generator and another option of that kind that I'm aware of is `"Ninja"`. 
-Other available option is the `CMAKE_BUILD_TYPE` with 2 options - `Release` and `Debug`, you can only build each of these types separately so in case you need both, you'll need to run the command two times.
-You can choose either Release of Debug version if you know what you need but if not, I recommend building both as there might be a big chance you'll eventually need both.
+Other available option is the `CMAKE_BUILD_TYPE` with 2 choices - `Release` and `Debug`, you can only build each of these types separately so in case you need both, you'll need to run the command two times.
+You can choose either Release or Debug version if you know what you need but if not, I recommend building both as there might be a big chance you'll eventually need both.
 Also, you have to make sure your default projects architecture is the same as the one you specify by `-A <arch>` parameter, I usually use `x64` so I went with it, in case of incompatibility you'll end up with errors.
 The command I used to build my Release and Debug versions was:
 
