@@ -17,7 +17,7 @@ To create a new Property Sheet you need to open your project in VS 2022:
 
 1. **Open C++ project**
 
-![[Pasted image 20250718122238.png]]
+![[Attachments/Pasted image 20250718122238.png]]
 
 2. **Solution Explorer**
 ![[Pasted image 20250718122331.png]]
